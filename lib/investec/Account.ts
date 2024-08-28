@@ -112,10 +112,10 @@ export class Account implements InvestecAccount {
     );
     if (isResponseBad(transferResponse)) {
       throw new Error(
-        `not ok response while performing transfer for account: ${{
+        `not ok response while performing transfer for account: ${JSON.stringify({
           accountId: this.accountId,
           response: transferResponse,
-        }}`
+        })}`
       );
     }
     return transferResponse.data.TransferResponses;
