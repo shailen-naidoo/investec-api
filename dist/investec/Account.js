@@ -70,10 +70,10 @@ class Account {
                 })),
             }, this.realm, this.client.baseUrl);
             if ((0, model_1.isResponseBad)(transferResponse)) {
-                throw new Error(`not ok response while performing transfer for account: ${{
+                throw new Error(`not ok response while performing transfer for account: ${JSON.stringify({
                     accountId: this.accountId,
                     response: transferResponse,
-                }}`);
+                })}`);
             }
             return transferResponse.data.TransferResponses;
         });
